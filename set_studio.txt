@@ -1,0 +1,88 @@
+
+
+
+
+
+—————————————————————————————————————————android studio—安装教程————————————————————————————————
+安装jdk
+sudo add-apt-repository ppa:webupd8team/java    
+sudo apt-get update    
+sudo apt-get install oracle-java8-installer   
+
+1. 本机通用jdk位置以及版本     /usr/lib/jvm/jdk1.8.0_121
+
+2. 配置环境变量
+
+gedit ~/.bashrc
+
+按shit+g在文件末尾加入以下内容
+
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_121
+
+export JRE_HOME=${JAVA_HOME}/jre 
+
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib 
+
+export PATH=${JAVA_HOME}/bin:$PATH
+
+退出保存，并运行下面的命令使之生效
+
+source ~/.bashrc
+
+3. 配置默认JDK
+由于部分Linux已经自带了JDK,所以我们需要设置刚刚安装好的JDK来作为默认JDK，可以进行下面的配置。
+
+sudo update-alternatives --install /usr/bin/java java /opt/java/jdk1.8.0_91/bin/java 300
+sudo update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.8.0_91/bin/javac 300
+
+4. 测试
+
+启动终端，输入以下命令
+
+java -version
+javac
+
+
+至此JDK安装完毕
+
+
+---------------------------------------------------------------------------------------------------
+安装SDK 和 Android studio
+
+下载sdk： http://tools.android-studio.org/index.php/sdk
+位置： /home/emily/Android/Sdk/platforms/android-sdk-linux
+配置文件： sudo gedit /etc/profile  |   sudo gedit ~/.bashrc
+        内容—— export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_121
+
+               export JRE_HOME=${JAVA_HOME}/jre 
+
+               export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib 
+
+               export PATH=${JAVA_HOME}/bin:$PATH
+
+               export SDK_HOME=/opt/android-sdk-linux 
+               export PATH=$SDK_HOME/tools:$SDK_HOME/platform-tools:$PATH
+生效配置： source /etc/profile      |   source ~/.bashrc
+终端输入 ./android 打开sdk manager 安装tools
+
+
+--------------------------------修改--------------------------------------------------------------
+gedit /etc/environment                                                                            
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
+
+
+———————————————————————————————————————1—————————————END———————————————————————————————————————————
+
+
+
+
+———————————————————————————————————————my eclipse 2015 3.0 ————————————————————————————————————————
+
+1. 网上下载my eclipse 配置环境
+2. 专门工具破解
+
+———————————————————————————————————————2—————————————END———————————————————————————————————————————
+
+
+
